@@ -16,4 +16,4 @@ This Fun Fact Generator is a simple web application that allows users to fetch a
 
 ## Credits
 
-The random fun facts are sources from the [API Ninjas Facts API](https://api.api-ninjas.com/v1/facts).
+The random fun facts are sources from the [API Ninjas Facts API](https://api.api-ninjas.com/v1/facts)
