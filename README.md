@@ -1,6 +1,6 @@
 # Fun Fact Generator
 
-The Fun Fact Generator is a simple web application that allows users to fetch and display random fun facts. With just a click of a button, users can learn interesting facts on a variety of topics.
+This Fun Fact Generator is a simple web application that allows users to fetch and display random fun facts about subjects including science, literature, philosophy, and more.
 
 ## How It Works
 
@@ -11,21 +11,11 @@ The Fun Fact Generator is a simple web application that allows users to fetch an
 
 ## Technologies Used
 
-- HTML: For structuring the web page.
-- CSS: For styling the page elements and applying formatting.
-- JavaScript (jQuery): For handling button click events, making AJAX requests, and updating the page content.
-- [API-Ninjas API](https://api.api-ninjas.com/v1/facts): The external API used to fetch random fun facts.
-
-## How to Use
-
-1. Clone this repository to your local machine.
-2. Open the `index.html` file in a web browser.
-3. Click the "Get Fun Fact" button to fetch and display a random fun fact.
+- HTML: Structuring the web page.
+- CSS: Styling the page elements and applying formatting.
+- JavaScript (jQuery): Handling button click events, making AJAX requests, and updating the page content.
+- [API-Ninjas API](https://api.api-ninjas.com/v1/facts): External API used to fetch random fun facts.
 
 ## Credits
 
-The random fun facts are provided by the [API-Ninjas API](https://api.api-ninjas.com/v1/facts). Special thanks to API-Ninjas for making this data available.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+The random fun facts are provided by the [API-Ninjas API](https://api.api-ninjas.com/v1/facts).
