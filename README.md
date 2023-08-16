@@ -9,13 +9,11 @@ This Fun Fact Generator is a simple web application that allows users to fetch a
 3. The API response is processed, and the displayed fun fact text alternates between different colors for each fact.
 4. The fact container will display the fetched fun fact along with the alternating text color.
 
-## Technologies Used
+## How to Install and Run the Project
 
-- HTML: Structuring the web page.
-- CSS: Styling the page elements and applying formatting.
-- JavaScript (jQuery): Handling button click events, making AJAX requests, and updating the page content.
-- [API-Ninjas API](https://api.api-ninjas.com/v1/facts): External API used to fetch random fun facts.
+1. Create an [API Ninjas](https://api-ninjas.com) account and retrieve your API key.
+2. Clone this repository to your local machine: [](git@github.com:sam-braun/fun-fact-generator.git).
 
 ## Credits
 
-The random fun facts are provided by the [API-Ninjas API](https://api.api-ninjas.com/v1/facts).
+The random fun facts are sources from the [API Ninjas Facts API](https://api.api-ninjas.com/v1/facts).
