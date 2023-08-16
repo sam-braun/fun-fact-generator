@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            font-family: "Lucida Console", Monaco, monospace; /* Set font */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #get-fact-button {
+            background-color: #69b3e7;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-family: "Lucida Console", Monaco, monospace; /* Set font */
+            padding: 15px 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        #fact-container {
+            margin-top: 20px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fun Fact Generator</h1>
+    <button id="get-fact-button">Get Fun Fact</button>
+    <div id="fact-container"></div>
+
+    <script>
+        // Array of alternating colors for fun fact text
+        var textColors = ["#69b3e7", "#eea304", "#ff3b25", "#ffffff"];
+        var currentColorIndex = 0; // Current color index
+
+        function getNextColor() {
+            currentColorIndex = (currentColorIndex + 1) % textColors.length;
+            return textColors[currentColorIndex];
+        }
+
+        $(document).ready(function() {
+            $("#get-fact-button").click(function() {
+                $.ajax({
+                    url: 'https://api.api-ninjas.com/v1/facts?limit=1',
+                    headers: {
+                        'X-Api-Key': 'your_api_key'
+                    },
+                    success: function(data) {
+                        var fact = data[0].fact;
+                        var textColor = getNextColor(); // Get the next alternating color
+                        var factHtml = "<p style='color: " + textColor + "'>" + fact + "</p>";
+                        $("#fact-container").html(factHtml);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Error:", error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
