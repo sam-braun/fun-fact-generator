@@ -12,8 +12,8 @@ This Fun Fact Generator is a simple web application that allows users to fetch a
 ## How to Install and Run the Project
 
 1. Create an [API Ninjas](https://api-ninjas.com) account and retrieve your API key.
-2. Clone this repository to your local machine: `git clone git@github.com:sam-braun/fun-fact-generator.git`.
+2. Clone this repository to your local machine: `git clone git@github.com:sam-braun/fun-fact-generator.git`
 
 ## Credits
 
-The random fun facts are sources from the [API Ninjas Facts API](https://api.api-ninjas.com/v1/facts)
+The random fun facts are sources from the [API Ninjas Facts API](https://api.api-ninjas.com/v1/facts).
