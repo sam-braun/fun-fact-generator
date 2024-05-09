@@ -27,7 +27,6 @@
             border: none;
             color: white;
             font-size: 18px;
-            font-family: "Lucida Console", Monaco, monospace; /* Set font */
             padding: 15px 30px;
             cursor: pointer;
             margin-top: 20px;
@@ -35,6 +34,7 @@
         }
         #get-fact-button:hover {
             background-color: #ff3b25;
+        }
         #fact-container {
             margin-top: 20px;
             font-size: 22px;
@@ -48,9 +48,9 @@
     <div id="fact-container"></div>
 
     <script>
-        // Array of alternating colors for fun fact text
+        // array of alternating colors for fun fact text
         var textColors = ["#69b3e7", "#eea304", "#ff3b25", "#ffffff"];
-        var currentColorIndex = 0; // Current color index
+        var currentColorIndex = 0;
 
         function getNextColor() {
             currentColorIndex = (currentColorIndex + 1) % textColors.length;
@@ -60,14 +60,18 @@
         $(document).ready(function() {
             $("#get-fact-button").click(function() {
                 $.ajax({
-                    url: 'https://api.api-ninjas.com/v1/facts?limit=1',
+                    method: 'GET',
+                    url: 'https://api.api-ninjas.com/v1/facts',
                     headers: {
-                        'X-Api-Key': 'your_api_key' // Input your own API key (it's free!)
+                        'X-Api-Key': 'YOUR_KEY'
                     },
-                    success: function(data) {
-                        var fact = data[0].fact;
-                        var textColor = getNextColor(); // Get the next alternating color
-                        var factHtml = "<p style='color: " + textColor + "'>" + fact + "</p>";
+                    contentType: 'application/json',
+                    success: function(result) {
+                        var factHtml = '';
+                        result.forEach(function(item) {
+                            var textColor = getNextColor();
+                            factHtml += "<p style='color: " + textColor + "'>" + item.fact + "</p>";
+                        });
                         $("#fact-container").html(factHtml);
                     },
                     error: function(xhr, status, error) {
